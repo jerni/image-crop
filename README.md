@@ -1,9 +1,9 @@
 # image-crop
 
-enable the bundle: 
+enable the bundle:
 
   - app\AppKernel.php
-  
+  --------------
       public function registerBundles()
       {
         $bundles = array(
@@ -11,54 +11,45 @@ enable the bundle:
           new Jse\ImageCropBundle\JseImageCropBundle(),
         );
       }
-  
-  
+
   - app\config\routing.yml
-  
+  --------------
       jse_image_crop:
           resource: "@JseImageCropBundle/Resources/config/routing.xml"
           prefix:   /
-      
+
   - app\config\parameters.yml
-  
+  --------------
       upload_dir: images/uploads
 
 
+  include to your page
+  --------------
+   {% include 'JseImageCropBundle:ImageCrop:image_crop.html.twig' %}
 
-include to your page:
-
-  {% include 'JseImageCropBundle:ImageCrop:image_crop.html.twig' %}
-
-
-as popup:
-  
-  <script type="text/javascript">
+  - as popup:
+  --------------
+    <script type="text/javascript">
       $(function(){
-          $(".ajax").colorbox({title: false});
+        $(".ajax").colorbox({title: false});
       });
-  </script>
-  <a href="{{ path('jse_image_crop_sample') }}">back</a>
-  <br />
-  <a title="Crop" href="{{ path('jse_image_crop_popup') }}" class="ajax cboxElement">crop</a>
-  
-  
-template path:
-  
-  JseImageCropBundle:ImageCrop:image_crop.html.twig
-  
-  
+    </script>
+    <a title="Crop" href="{{ path('jse_image_crop_popup') }}" class="ajax cboxElement">crop</a>
 
-initialize js:
-  
-  imageCrop.init(width, height);
-  imageCrop.onsubmit = function(){
-      // code here
-  }
-  imageCrop.callback = function(data){
+  - template path:
+  --------------
+    JseImageCropBundle:ImageCrop:image_crop.html.twig
+
+  - initialize js:
+  --------------
+    imageCrop.init(width, height);
+    imageCrop.onsubmit = function(){
+     // code here
+    }
+    imageCrop.callback = function(data){
       if(data.saved) {
-          // code here
+        // code here
       } else {
-          // code here
+        // code here
       }
-  }
-
+    }

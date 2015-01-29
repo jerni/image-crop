@@ -23,33 +23,33 @@ enable the bundle:
       upload_dir: images/uploads
 
 
-  include to your page
+  - include to your page
   --------------
-   {% include 'JseImageCropBundle:ImageCrop:image_crop.html.twig' %}
+      {% include 'JseImageCropBundle:ImageCrop:image_crop.html.twig' %}
 
   - as popup:
   --------------
-    <script type="text/javascript">
-      $(function(){
-        $(".ajax").colorbox({title: false});
-      });
-    </script>
-    <a title="Crop" href="{{ path('jse_image_crop_popup') }}" class="ajax cboxElement">crop</a>
+      <script type="text/javascript">
+        $(function(){
+          $(".ajax").colorbox({title: false});
+        });
+      </script>
+      <a title="Crop" href="{{ path('jse_image_crop_popup') }}" class="ajax cboxElement">crop</a>
 
   - template path:
   --------------
-    JseImageCropBundle:ImageCrop:image_crop.html.twig
+      JseImageCropBundle:ImageCrop:image_crop.html.twig
 
   - initialize js:
   --------------
-    imageCrop.init(width, height);
-    imageCrop.onsubmit = function(){
-     // code here
-    }
-    imageCrop.callback = function(data){
-      if(data.saved) {
-        // code here
-      } else {
-        // code here
+      imageCrop.init(width, height);
+      imageCrop.onsubmit = function(){
+       // code here
       }
-    }
+      imageCrop.callback = function(data){
+        if(data.saved) {
+          // code here
+        } else {
+          // code here
+        }
+      }

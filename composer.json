@@ -1,0 +1,24 @@
+{
+  "name": "jerni/image-crop",
+  "type": "symfony-bundle",
+  "description": "Symfony2 Bundle Crop Image Extension",
+  "keywords": ["symfony2", "crop", "image"],
+  "homepage": "https://github.com/jerni/image-crop",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "jse",
+      "email": "ernijosephstalin@gmail.com",
+      "homepage": "http://jsmierni.com/"
+    }
+  ],
+  "minimum-stability" : "dev",
+  "autoload": {
+    "psr-4": { "Jse\\ImageCropBundle\\": "" }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "v1.0.x-dev"
+    }
+  }
+}

@@ -15,7 +15,7 @@ enable the bundle:
   - app\config\routing.yml
   --------------
       jse_image_crop:
-          resource: "@JseImageCropBundle/Resources/config/routing.xml"
+          resource: "@JseImageCropBundle/Resources/config/image_crop_routing.xml"
           prefix:   /
 
   - app\config\parameters.yml

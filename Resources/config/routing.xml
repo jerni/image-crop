@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="jse_image_crop_sample" path="/image-crop/sample/{type}">
+        <default key="_controller">JseImageCropBundle:ImageCrop:index</default>
+        <default key="type">0</default>
+    </route>
+
+    <route id="jse_image_crop_save" path="/image-crop/save">
+        <default key="_controller">JseImageCropBundle:ImageCrop:save</default>
+    </route>
+
+    <route id="jse_image_crop_popup" path="/image-crop/show">
+        <default key="_controller">JseImageCropBundle:ImageCrop:imageCropPopUp</default>
+    </route>
+</routes>

@@ -1,0 +1,53 @@
+.cropit-image-preview {
+    background-color: #f8f8f8;
+    background-size: cover;
+    margin-top: 7px;
+    cursor: move;
+}
+
+.cropit-image-background {
+    opacity: .2;
+    cursor: auto;
+}
+
+.image-size-label {
+    margin-top: 10px;
+}
+
+input {
+    /* Use relative position to prevent from being covered by image background */
+    position: relative;
+    z-index: 10;
+    display: block;
+}
+
+.export {
+    margin-top: 10px;
+}
+
+.cropit-main-container{
+    margin: 100px;
+}
+
+/* Hide file input */
+input.cropit-image-input {
+    visibility: hidden;
+}
+
+.cropit-image-zoom-input.custom{
+    -moz-appearance: none;
+    background: none repeat scroll 0 0 #eee;
+    border-radius: 5px;
+    height: 5px;
+    outline: medium none;
+    width: 168px;
+}
+
+.cropit-image-zoom-input.custom , .slider-wrapper span{
+    vertical-align: middle;
+    display: inline;
+}
+
+.cropit-image-background-container img{
+    max-width: none;
+}

@@ -1,0 +1,32 @@
+{% stylesheets
+'bundles/jseimagecrop/css/colorbox.css'
+filter='?yui_css'
+%}
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+{% javascripts
+'bundles/jseimagecrop/js/jquery.colorbox-min.js'
+filter='?closure'
+%}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% if app.request.get('type') == 'page' %}
+    <a href="{{ path('jse_image_crop_sample') }}">back</a>
+    <br />
+    {% include 'JseImageCropBundle:ImageCrop:image_crop.html.twig' %}
+{% elseif app.request.get('type') == 'popup' %}
+    <script type="text/javascript">
+        $(function(){
+            $(".ajax").colorbox({title: false});
+        });
+    </script>
+    <a href="{{ path('jse_image_crop_sample') }}">back</a>
+    <br />
+    <a title="Crop" href="{{ path('jse_image_crop_popup') }}" class="ajax cboxElement">crop</a>
+{% else %}
+    <a href="{{ path('jse_image_crop_sample', {type: 'page'}) }}">page</a>
+    <br />
+    <br />
+    <a href="{{ path('jse_image_crop_sample', {type: 'popup'}) }}">popup</a>
+{% endif %}
